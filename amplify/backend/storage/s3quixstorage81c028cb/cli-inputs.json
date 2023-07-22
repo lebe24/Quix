@@ -1,0 +1,13 @@
+{
+  "resourceName": "s3quixstorage81c028cb",
+  "bucketName": "quix-storage-81c028cb",
+  "policyUUID": "912f7c94",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE"
+  ]
+}

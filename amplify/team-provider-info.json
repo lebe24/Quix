@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-quix-dev-102553-authRole",
+      "UnauthRoleArn": "arn:aws:iam::712171501174:role/amplify-quix-dev-102553-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::712171501174:role/amplify-quix-dev-102553-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-quix-dev-102553-deployment",
+      "UnauthRoleName": "amplify-quix-dev-102553-unauthRole",
+      "StackName": "amplify-quix-dev-102553",
+      "StackId": "arn:aws:cloudformation:eu-north-1:712171501174:stack/amplify-quix-dev-102553/9b61ba80-22f1-11ee-bfbe-0a437ae9840a",
+      "AmplifyAppId": "d3mf594cgwtmph"
+    },
+    "categories": {
+      "auth": {
+        "quix36be0270": {}
+      },
+      "storage": {
+        "s3quixstorage81c028cb": {}
+      },
+      "api": {
+        "quix": {}
+      }
+    }
+  }
+}

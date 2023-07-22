@@ -1,0 +1,9 @@
+export 'package:flutter/material.dart';
+export 'package:quix/src/core/app_constant.dart';
+export 'package:quix/src/data/model/dashboard.dart';
+export 'package:quix/src/screen/Auth/auth_view.dart';
+export 'package:quix/src/screen/calculator/calculator_view.dart';
+export 'package:quix/src/screen/dashboard/dashboard_view.dart';
+export 'package:quix/src/screen/home/home_view.dart';
+export 'package:quix/src/screen/splash/splash_view.dart';
+export 'package:tuple/tuple.dart';

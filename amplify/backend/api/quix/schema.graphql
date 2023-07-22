@@ -1,0 +1,25 @@
+type Score @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  score: Int!
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  email: AWSEmail
+  ScoreUnit: Score @hasOne
+}
+
+type Answer @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Text: String
+  questions: [Question] @manyToMany(relationName: "QuestionAnswer")
+}
+
+type Question @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Text: String
+  Answers: [Answer] @manyToMany(relationName: "QuestionAnswer")
+  AcceptedAns: Answer @hasOne
+}
+ 
