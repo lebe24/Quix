@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:quix/models/ModelProvider.dart';
+import 'package:quix/src/data/repo/correct_name_repository.dart';
 
-class CorrectNameQuestionView extends StatelessWidget {
-  final Question question;
-  final Widget questionView;
+class CorrectNameQuestionView extends StatefulWidget {
+  final String question;
+  
 
-  const CorrectNameQuestionView({super.key, required this.question, required this.questionView});
+   const CorrectNameQuestionView({
+    Key? key,
+    required this.question,
+  }) : super(key: key);
 
   @override
+  State<CorrectNameQuestionView> createState() => _CorrectNameQuestionViewState();
+}
+
+class _CorrectNameQuestionViewState extends State<CorrectNameQuestionView> {
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text('name of the person',
-          style: Theme.of(context).textTheme.labelMedium!.copyWith(fontSize: 30),
-        ),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(23),
-          child: Text(question.Text.toString()),
-        )
-      ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(29),
+      child: Image.network(
+        'https://www.moviepostersgallery.com/wp-content/uploads/2020/08/Blackwidow2.jpg',
+        height: 300,
+      ),
     );
   }
 }

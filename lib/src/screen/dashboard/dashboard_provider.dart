@@ -61,6 +61,17 @@ class DashboardProvider extends ChangeNotifier {
           AppAssets.icQuickCalculation,
         ));
         break;
+      case PuzzleType.KNOWLEDGE_PUZZLE:
+        list.add(GameCategory(
+          1,
+          "Knowlege Test",
+          "Test_Knowledge",
+          GameCategoryType.CORRECT_NAME,
+          KeyUtil.correctName,
+          getScoreboard("mental_arithmatic"),
+          AppAssets.icTrainBrain,
+        ));
+        break;
       case PuzzleType.MEMORY_PUZZLE:
         list.add(GameCategory(
           7,
@@ -127,9 +138,6 @@ class DashboardProvider extends ChangeNotifier {
           getScoreboard("number_pyramid"),
           AppAssets.icNumberPyramid,
         ));
-        break;
-      case PuzzleType.KNOWLEDGE_PUZZLE:
-        // TODO: Handle this case.
         break;
     }
     return _list;

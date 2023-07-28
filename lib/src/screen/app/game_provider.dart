@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:quix/src/core/app_constant.dart';
 import 'package:quix/src/data/repo/calculator_repo.dart';
 import 'package:quix/src/data/repo/correct_answer_repository.dart';
+import 'package:quix/src/data/repo/correct_name_repository.dart';
 import 'package:quix/src/data/repo/quick_calculation_repository.dart';
 import 'package:quix/src/data/repo/sign_repository.dart';
 import 'dart:async';
@@ -134,7 +135,7 @@ class GameProvider<T> extends TimeProvider {
       case GameCategoryType.MATH_GRID:
         return CalculatorRepository.getCalculatorDataList(level);
       case GameCategoryType.CORRECT_NAME:
-        return CalculatorRepository.getCalculatorDataList(level);
+        return CorrectNameRepository().getCorrectNameDataList(level);
       case GameCategoryType.PICTURE_PUZZLE:
         return CalculatorRepository.getCalculatorDataList(level);
       case GameCategoryType.NUMBER_PYRAMID:

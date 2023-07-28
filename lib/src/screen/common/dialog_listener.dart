@@ -62,7 +62,7 @@ class _DialogListenerState<T extends GameProvider>
             gameCategoryType: widget.gameCategoryType,
           ),
           backgroundColor: Theme.of(context).colorScheme.infoDialogBgColor,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(24), topRight: Radius.circular(24)),
           ),

@@ -52,7 +52,7 @@ class GuessSignView extends StatelessWidget {
                                   calculatorProvider.firstDigit,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .subtitle2!
+                                      .labelMedium!
                                       .copyWith(fontSize: 30),
                                 );
                               }),
@@ -75,7 +75,7 @@ class GuessSignView extends StatelessWidget {
                                     result,
                                     style: Theme.of(context)
                                         .textTheme
-                                        .subtitle2!
+                                        .labelMedium!
                                         .copyWith(
                                         fontSize: 30,
                                         color: colorTuple.item1),
@@ -86,13 +86,13 @@ class GuessSignView extends StatelessWidget {
                           ),
                           SizedBox(width: 14),
                           Selector<GuessSignProvider, Sign>(
-                              selector: (p0, p1) => p1.currentState,
+                              selector: (p0, p1) => p1.currentState!,
                               builder: (context, calculatorProvider, child) {
                                 return Text(
                                   calculatorProvider.secondDigit,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .subtitle2!
+                                      .labelMedium!
                                       .copyWith(fontSize: 30),
                                 );
                               }),
@@ -101,18 +101,18 @@ class GuessSignView extends StatelessWidget {
                             "=",
                             style: Theme.of(context)
                                 .textTheme
-                                .subtitle2!
+                                .labelMedium!
                                 .copyWith(fontSize: 30),
                           ),
                           SizedBox(width: 6),
                           Selector<GuessSignProvider, Sign>(
-                              selector: (p0, p1) => p1.currentState,
+                              selector: (p0, p1) => p1.currentState!,
                               builder: (context, calculatorProvider, child) {
                                 return Text(
                                   calculatorProvider.answer,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .subtitle2!
+                                      .labelMedium!
                                       .copyWith(fontSize: 30),
                                 );
                               }),

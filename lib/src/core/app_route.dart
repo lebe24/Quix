@@ -1,5 +1,6 @@
 import 'package:quix/src/core/index.dart';
 import 'package:quix/src/screen/correctAnswer/correct_answer_view.dart';
+import 'package:quix/src/screen/correctName/correct_name_view.dart';
 import 'package:quix/src/screen/guessTheSign/guess_sign_view.dart';
 import 'package:quix/src/screen/profile/profile_view.dart';
 import 'package:quix/src/screen/quickCalculation/quick_calculation_view.dart';
@@ -20,9 +21,10 @@ var appRoutes = {
   KeyUtil.correctAnswer: (context) => CorrectAnswerView(
       colorTuple:
           ModalRoute.of(context)?.settings.arguments as Tuple2<Color, Color>),
+  KeyUtil.correctName: (context) => CorrectNameView(
+      colorTuple:
+          ModalRoute.of(context)?.settings.arguments as Tuple2<Color, Color>),
   KeyUtil.quickCalculation: (context) => QuickCalculationView(
       colorTuple:
           ModalRoute.of(context)?.settings.arguments as Tuple2<Color, Color>),
-
-
 };

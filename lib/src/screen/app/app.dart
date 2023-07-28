@@ -29,7 +29,6 @@ class App extends StatelessWidget {
         themeMode: provider.themeMode,
         initialRoute: KeyUtil.splash,
         routes: appRoutes,
-        
       );
     });
   }

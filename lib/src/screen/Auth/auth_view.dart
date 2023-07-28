@@ -1,3 +1,4 @@
+import 'package:amplify_analytics_pinpoint/amplify_analytics_pinpoint.dart';
 import 'package:flutter/material.dart';
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_authenticator/amplify_authenticator.dart';
@@ -11,6 +12,7 @@ import 'package:quix/amplifyconfiguration.dart';
 import 'package:quix/models/ModelProvider.dart';
 import 'package:quix/src/core/app_route.dart';
 import 'package:quix/src/core/app_theme.dart';
+import 'package:quix/src/data/services/api_service.dart';
 import 'package:quix/src/screen/app/theme_provider.dart';
 import 'package:quix/src/screen/dashboard/dashboard_view.dart';
 
@@ -25,26 +27,30 @@ class AuthView extends StatefulWidget {
 
 class _AuthViewState extends State<AuthView> {
 
+  APIService _apiService = APIService();
+
   @override
   void initState() {
-    _configureAmplify();
-    
+  _configureAmplify();
     super.initState();
   }
 
   void _configureAmplify() async {
     try {
-      AmplifyDataStore dataStorePlugin = AmplifyDataStore(modelProvider: ModelProvider.instance);
+
+      final auth = AmplifyAuthCognito();
       final api = AmplifyAPI(modelProvider: ModelProvider.instance);
-      await Amplify.addPlugins([AmplifyAuthCognito(),api,dataStorePlugin]);
+      final analyticsPlugin = AmplifyAnalyticsPinpoint();
+      await Amplify.addPlugins([auth,api,analyticsPlugin]);
       await Amplify.configure(amplifyconfig);
       safePrint('Successfully configured');
+      _apiService.recordSignin();
+
     } on Exception catch (e) {
       safePrint('Error configuring Amplify: $e');
     }
 
-    queryListItems();
-  }
+}
 
 
   @override
@@ -53,9 +59,8 @@ class _AuthViewState extends State<AuthView> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return Consumer<ThemeProvider>(
-      builder: (context, ThemeProvider provider, child)  {
-        return Authenticator(
+    return 
+       Authenticator(
           signUpForm: SignUpForm.custom(
           fields: [
               SignUpFormField.username(),
@@ -64,36 +69,21 @@ class _AuthViewState extends State<AuthView> {
               SignUpFormField.email(),
             ],
           ),
-          child: MaterialApp(
-            builder: Authenticator.builder(),
-            title: 'Math Matrix',
-            debugShowCheckedModeBanner: false,
-            theme: AppTheme.theme,
-            darkTheme: AppTheme.darkTheme,
-            routes: appRoutes,
-            home: DashboardView()),
+          child: Consumer<ThemeProvider>(
+            builder: (context, ThemeProvider provider, child) {
+
+              return MaterialApp(
+                builder: Authenticator.builder(),
+                title: 'Math Matrix',
+                debugShowCheckedModeBanner: false,
+                theme: AppTheme.theme,
+                themeMode: provider.themeMode,
+                darkTheme: AppTheme.darkTheme,
+                routes: appRoutes,
+                home: DashboardView());
+            }
+          ),
         );
-      }
-    );
   }
 }
 
-Future<List<Question?>> queryListItems() async {
-  try {
-    final request = ModelQueries.list(Question.classType);
-    final response = await Amplify.API.query(request: request).response;
-
-    final todos = response.data?.items;
-    final todo = response.data?.items[0];
-    final answer = response.data?.items;
-    if (todos == null) {
-      safePrint('errors: ${response.errors}');
-      return const [];
-    }
-    print({todo});
-    return todos;
-  } on ApiException catch (e) {
-    safePrint('Query failed: $e');
-    return const [];
-  }
-}

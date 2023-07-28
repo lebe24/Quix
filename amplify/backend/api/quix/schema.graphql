@@ -22,4 +22,4 @@ type Question @model @auth(rules: [{allow: public}]) {
   Answers: [Answer] @manyToMany(relationName: "QuestionAnswer")
   AcceptedAns: Answer @hasOne
 }
- 
+

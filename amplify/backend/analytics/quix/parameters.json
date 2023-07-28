@@ -1,0 +1,21 @@
+{
+    "appName": "quix",
+    "roleName": "pinpointLambdaRole81188428",
+    "cloudformationPolicyName": "cloudformationPolicy81188428",
+    "cloudWatchPolicyName": "cloudWatchPolicy81188428",
+    "pinpointPolicyName": "pinpointPolicy81188428",
+    "authPolicyName": "pinpoint_amplify_81188428",
+    "unauthPolicyName": "pinpoint_amplify_81188428",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

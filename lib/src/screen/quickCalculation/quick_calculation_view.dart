@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quix/src/core/index.dart';
 import 'package:quix/src/data/model/quick_calculation.dart';
@@ -11,7 +10,6 @@ import 'package:quix/src/screen/common/common_wrong_answer_animation.dart';
 import 'package:quix/src/screen/common/dialog_listener.dart';
 import 'package:quix/src/screen/quickCalculation/quick_calculation_provider.dart';
 import 'package:quix/src/screen/quickCalculation/quick_calculation_question_view.dart';
-import 'package:tuple/tuple.dart';
 import 'package:vsync_provider/vsync_provider.dart';
 
 class QuickCalculationView extends StatelessWidget {

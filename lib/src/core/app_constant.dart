@@ -51,6 +51,7 @@ class KeyUtil {
   static const String calculator = 'Calculator';
   static const String guessSign = 'GuessSign';
   static const String correctAnswer = 'CorrectAnswer';
+  static const String correctName = 'CorrectName';
   static const String quickCalculation = 'QuickCalculation';
   static const String mentalArithmetic = 'MentalArithmetic';
   static const String squareRoot = 'SquareRoot';
@@ -74,14 +75,14 @@ class KeyUtil {
     ),
     Dashboard(
       puzzleType: PuzzleType.KNOWLEDGE_PUZZLE,
-      colorTuple: Tuple2(Color(0xff9f2beb), Color(0xff560bad)),
+      colorTuple: Tuple2(Color.fromARGB(255, 208, 211, 25), Color.fromARGB(255, 176, 162, 12)),
       opacity: 0.07,
       icon: AppAssets.icMemoryPuzzle,
       outlineIcon: AppAssets.icMemoryPuzzleOutline,
       subtitle: "Test your Knowledge ",
       title: "Knowledge Puzzle",
-      fillIconColor: Color(0xff9f2beb),
-      outlineIconColor: Color(0xff560BAD),
+      fillIconColor: Color.fromARGB(255, 209, 212, 7),
+      outlineIconColor: Color.fromARGB(255, 212, 171, 9),
     ),
     Dashboard(
       puzzleType: PuzzleType.MEMORY_PUZZLE,
@@ -188,7 +189,7 @@ class KeyUtil {
   static int calculatorTimeOut = 5;
   static int guessSignTimeOut = 5;
   static int correctAnswerTimeOut = 5;
-  static int correctNameTimeOut = 5;
+  static int correctNameTimeOut = 100;
   static int quickCalculationTimeOut = 20;
   static int quickCalculationPlusTime = 1;
 

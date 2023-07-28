@@ -49,7 +49,7 @@ class CalculatorView extends StatelessWidget {
                           Consumer<CalculatorProvider>(
                               builder: (context, calculatorProvider, child) {
                             return Text(
-                              calculatorProvider.currentState.question,
+                              calculatorProvider.currentState!.question,
                               style: Theme.of(context)
                                   .textTheme
                                   .labelMedium!

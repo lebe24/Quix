@@ -13,18 +13,18 @@ class CalculatorProvider extends GameProvider<Calculator> {
   }
 
   void checkResult(String answer) async {
-    if (result.length < currentState.answer.toString().length &&
+    if (result.length < currentState!.answer.toString().length &&
         timerStatus != TimerStatus.pause) {
       result = result + answer;
       notifyListeners();
-      if (int.parse(result) == currentState.answer) {
+      if (int.parse(result) == currentState!.answer) {
         await Future.delayed(Duration(milliseconds: 300));
         loadNewDataIfRequired();
         if (timerStatus != TimerStatus.pause) {
           restartTimer();
         }
         notifyListeners();
-      } else if (result.length == currentState.answer.toString().length) {
+      } else if (result.length == currentState!.answer.toString().length) {
         wrongAnswer();
       }
     }
