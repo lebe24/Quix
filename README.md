@@ -1,8 +1,6 @@
-# quix
+# Quix
 
-A new Flutter project.
-
-## Getting Started
+### Quix is an Aws Amplify  Hackathon Project this showcase the how to intrigate the amplify to 
 
 This project is a starting point for a Flutter application.
 
