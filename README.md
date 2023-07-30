@@ -22,11 +22,22 @@ This project is a starting point for a Flutter application.
 
 ## Project setup
 
+To run this project locally you need to install flutter and its dependences with ``flutter pub get``
+
+step 1:
+
 ```shell
 git clone https://github.com/lebe24/Quix.git
 ``````
+step 2:
+````shell
+amplify init
+``````
+step 3:
+````shell
+amplify push
+``````
 
-A few resources to get you started if this is your first Flutter project:
 
 
 For help getting started with Flutter development, view the
