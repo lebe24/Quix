@@ -22,6 +22,10 @@ This project is a starting point for a Flutter application.
 
 ## Project setup
 
+```shell
+git clone https://github.com/lebe24/Quix.git
+``````
+
 A few resources to get you started if this is your first Flutter project:
 
 
