@@ -40,7 +40,7 @@ class CalculatorView extends StatelessWidget {
                 constraints: BoxConstraints.expand(),
                 child: Column(
                   children: <Widget>[
-                    CommonInfoTextView<CalculatorProvider>(
+                    const CommonInfoTextView<CalculatorProvider>(
                         gameCategoryType: GameCategoryType.CALCULATOR),
                     Expanded(
                       child: Column(
@@ -49,7 +49,7 @@ class CalculatorView extends StatelessWidget {
                           Consumer<CalculatorProvider>(
                               builder: (context, calculatorProvider, child) {
                             return Text(
-                              calculatorProvider.currentState!.question,
+                              calculatorProvider.currentState.question,
                               style: Theme.of(context)
                                   .textTheme
                                   .labelMedium!
@@ -76,7 +76,7 @@ class CalculatorView extends StatelessWidget {
                                     result,
                                     style: Theme.of(context)
                                         .textTheme
-                                        .subtitle2!
+                                        .labelMedium!
                                         .copyWith(
                                             fontSize: 30,
                                             color: colorTuple.item1),
@@ -90,7 +90,7 @@ class CalculatorView extends StatelessWidget {
                     ),
                     Builder(builder: (context) {
                       return GridView(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3),
                         padding: const EdgeInsets.only(bottom: 24),
                         shrinkWrap: true,

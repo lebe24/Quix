@@ -21,7 +21,7 @@ enum GameCategoryType {
   NUMBER_PYRAMID
 }
 
-enum PuzzleType { MATH_PUZZLE, KNOWLEDGE_PUZZLE, MEMORY_PUZZLE, BRAIN_PUZZLE }
+enum PuzzleType { MATH_PUZZLE, KNOWLEDGE_PUZZLE, MEMORY_PUZZLE }
 
 enum TimerStatus {
   restart,

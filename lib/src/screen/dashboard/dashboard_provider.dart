@@ -74,15 +74,6 @@ class DashboardProvider extends ChangeNotifier {
         break;
       case PuzzleType.MEMORY_PUZZLE:
         list.add(GameCategory(
-          7,
-          "Mental arithmetic",
-          "mental_arithmatic",
-          GameCategoryType.MENTAL_ARITHMETIC,
-          KeyUtil.mentalArithmetic,
-          getScoreboard("mental_arithmatic"),
-          AppAssets.icMentalArithmetic,
-        ));
-        list.add(GameCategory(
           3,
           "Square root",
           "square_root",
@@ -90,53 +81,6 @@ class DashboardProvider extends ChangeNotifier {
           KeyUtil.squareRoot,
           getScoreboard("square_root"),
           AppAssets.icSquareRoot,
-        ));
-        list.add(GameCategory(
-          9,
-          "Math Grid",
-          "math_machine",
-          GameCategoryType.MATH_GRID,
-          KeyUtil.mathGrid,
-          getScoreboard("math_machine"),
-          AppAssets.icMathGrid,
-        ));
-        list.add(GameCategory(
-          4,
-          "Mathematical pairs",
-          "math_pairs",
-          GameCategoryType.MATH_PAIRS,
-          KeyUtil.mathPairs,
-          getScoreboard("math_pairs"),
-          AppAssets.icMathematicalPairs,
-        ));
-        break;
-      case PuzzleType.BRAIN_PUZZLE:
-        list.add(GameCategory(
-          6,
-          "Magic triangle",
-          "magic_tringle",
-          GameCategoryType.MAGIC_TRIANGLE,
-          KeyUtil.magicTriangle,
-          getScoreboard("magic_tringle"),
-          AppAssets.icMagicTriangle,
-        ));
-        list.add(GameCategory(
-          10,
-          "Picture Puzzle",
-          "picture_puzzle",
-          GameCategoryType.PICTURE_PUZZLE,
-          KeyUtil.picturePuzzle,
-          getScoreboard("picture_puzzle"),
-          AppAssets.icPicturePuzzle,
-        ));
-        list.add(GameCategory(
-          11,
-          "Number Pyramid",
-          "number_pyramid",
-          GameCategoryType.NUMBER_PYRAMID,
-          KeyUtil.numberPyramid,
-          getScoreboard("number_pyramid"),
-          AppAssets.icNumberPyramid,
         ));
         break;
     }

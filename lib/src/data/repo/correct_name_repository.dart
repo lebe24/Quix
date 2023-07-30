@@ -32,9 +32,7 @@ class CorrectNameRepository {
   }
 
   dynamic getStuff() async{
-     question = await _apiService.getQuestion();
+    question = await _apiService.getQuestion();
     safePrint(question[0].Text.toString());
-
-
   }
 }

@@ -135,10 +135,8 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                 ListView(
                   padding: EdgeInsets.only(
                     top: 200 + widget.tuple2.item2,
-                    bottom: widget.tuple2.item1.puzzleType ==
-                            PuzzleType.BRAIN_PUZZLE
-                        ? MediaQuery.of(context).size.height / 3
-                        : MediaQuery.of(context).size.height / 4,
+                    bottom: 
+                        MediaQuery.of(context).size.height / 4,
                   ),
                   children: Provider.of<DashboardProvider>(context)
                       .getGameByPuzzleType(widget.tuple2.item1.puzzleType)
@@ -212,12 +210,12 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                                   left: 20, top: 7 + widget.tuple2.item2),
                               child: Card(
                                 color: Theme.of(context).colorScheme.crossColor,
-                                shape: RoundedRectangleBorder(
+                                shape: const RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(16))),
                                 child: InkWell(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(16)),
+                                     const  BorderRadius.all(Radius.circular(16)),
                                   onTap: () {
                                     Navigator.pop(context);
                                   },

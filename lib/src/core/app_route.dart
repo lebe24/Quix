@@ -4,6 +4,7 @@ import 'package:quix/src/screen/correctName/correct_name_view.dart';
 import 'package:quix/src/screen/guessTheSign/guess_sign_view.dart';
 import 'package:quix/src/screen/profile/profile_view.dart';
 import 'package:quix/src/screen/quickCalculation/quick_calculation_view.dart';
+import 'package:quix/src/screen/squareRoot/square_root_view.dart';
 
 
 var appRoutes = {
@@ -25,6 +26,9 @@ var appRoutes = {
       colorTuple:
           ModalRoute.of(context)?.settings.arguments as Tuple2<Color, Color>),
   KeyUtil.quickCalculation: (context) => QuickCalculationView(
+      colorTuple:
+          ModalRoute.of(context)?.settings.arguments as Tuple2<Color, Color>),
+  KeyUtil.squareRoot: (context) => SquareRootView(
       colorTuple:
           ModalRoute.of(context)?.settings.arguments as Tuple2<Color, Color>),
 };

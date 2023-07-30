@@ -1,8 +1,35 @@
+import 'package:amplify_analytics_pinpoint/amplify_analytics_pinpoint.dart';
 import 'package:amplify_api/amplify_api.dart';
+import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:quix/amplifyconfiguration.dart';
 import 'package:quix/models/ModelProvider.dart';
 
 class APIService {
+
+  Future<void>  configureAmplify() async{
+    final auth = AmplifyAuthCognito();
+    final analyticsPlugin = AmplifyAnalyticsPinpoint();
+    final api = AmplifyAPI(modelProvider: ModelProvider.instance);
+
+    try{
+      await Amplify.addPlugins([auth,api,analyticsPlugin]);
+      await Amplify.configure(amplifyconfig);
+      safePrint('Successfully configured');
+      recordSignin();
+    }on Exception catch (e) {
+      safePrint('Error configuring Amplify: $e');
+    }
+  }
+
+  Future<void> updateScore(Score score) async{
+    try{
+      final request = ModelMutations.update(score);
+      await Amplify.API.mutate(request: request).response;
+    }on ApiException catch (e) {
+      safePrint('update failed: $e');
+    }
+  }
 
   Future<List<Question?>> getQuestion() async {
   try {
@@ -20,7 +47,7 @@ class APIService {
     safePrint('Query failed: $e');
   }
     return <Question?>[];
-  }
+}
 
   Future<void> recordSignin() async {
     final event = AnalyticsEvent('User sign in');
