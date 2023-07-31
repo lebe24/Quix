@@ -18,11 +18,12 @@ This project is a starting point for a Flutter application.
 - ✅ **Provider**
 
 ##  showcase
+![Quix app](https://github.com/lebe24/Quix/assets/31292486/e41c1e83-25b3-49fd-8c8d-d7996d0a5d9d)
 
 
 ## Project setup
 
-To run this project locally you need to install flutter and its dependences with ``flutter pub get``
+To run this project locally you need to install Flutter and its dependences with ``flutter pub get``
 
 step 1:
 
