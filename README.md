@@ -26,11 +26,11 @@ https://github.com/lebe24/Quix/assets/31292486/2019d8ed-c39f-4053-a852-4f2f5b994
 
 ## Project setup
 
-To run this project locally you need to install Flutter and its dependences with ``flutter pub get``
+To run this project locally you need to install Flutter and its dependencies with ``flutter pub get``
 
 step 1:
 
-```shell
+``` shell
 git clone https://github.com/lebe24/Quix.git
 ``````
 step 2:
@@ -40,6 +40,14 @@ amplify init
 step 3:
 ````shell
 amplify push
+``````
+step 4:
+````shell
+flutter pub get
+``````
+step 5:
+````shell
+flutter run
 ``````
 
 
