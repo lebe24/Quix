@@ -2,12 +2,7 @@
   Quix 
 </h1>
 
-<p align="center">
-  <img width="499" align="center" alt="Screenshot 2023-07-30 at 16 27 07" src="https://github.com/lebe24/Quix/assets/31292486/60962825-efcb-4469-8d38-813a32540e8c">
-</p>
-
-
-Quix is an AWS Amplify Hackathon project that showcases how to integrate Amplify.
+Quix is an AWS Amplify project that showcases how to integrate Amplify.
 This project is a starting point for a Flutter application.
 
 
